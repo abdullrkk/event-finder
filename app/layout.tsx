@@ -1,13 +1,14 @@
+// ✅ This is a server component
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { EventProvider } from "@/lib/EventContext";
+import ClientProviders from "@/components/ClientProviders"; // <-- new wrapper
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Event Finder",
-    description: "Discover and share local events",
+    description: "Discover and submit local events",
 };
 
 export default function RootLayout({
@@ -18,7 +19,7 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body className={inter.className}>
-        <EventProvider>{children}</EventProvider>
+        <ClientProviders>{children}</ClientProviders>
         </body>
         </html>
     );
