@@ -45,7 +45,7 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -59,7 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1745771358006</updated>
       <workItem from="1745771359030" duration="14209000" />
-      <workItem from="1746880364187" duration="2778000" />
+      <workItem from="1746880364187" duration="4967000" />
     </task>
     <servers />
   </component>
