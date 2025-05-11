@@ -1,31 +1,34 @@
-/*
-  Full modern landing page built with:
-  - Next.js + TypeScript
-  - Tailwind CSS
-  - Framer Motion for animations
-  - Lottie for animation
-  - React Scroll Parallax
-  - Swiper for carousel
-  - Scroll-to-section navigation
-*/
-
 "use client";
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
-import { Parallax } from "react-scroll-parallax";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
+import SubscribeForm from "@/components/SubscribeForm";
 import animationData from "@/public/animation.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { useRouter } from "next/navigation";
+import { loadStripe } from "@stripe/stripe-js";
+import EventsSection from "@/components/EventsSection";
+
+
+
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 export default function LandingPage() {
+    const router = useRouter();
     const targetDate = new Date("2025-06-01T00:00:00");
+
     const [timeLeft, setTimeLeft] = useState(getTimeLeft());
     const [showModal, setShowModal] = useState(false);
-    const [selectedEvent, setSelectedEvent] = useState<null | { title: string; description: string }>(null);
+    const [selectedEvent, setSelectedEvent] = useState<null | {
+        title: string;
+        description: string;
+    }>(null);
 
     function getTimeLeft() {
         const now = new Date();
@@ -52,23 +55,37 @@ export default function LandingPage() {
         }
     };
 
+    const navigateToSubmit = () => {
+        router.push('/submit');
+    };
+
     const events = Array.from({ length: 20 }, (_, i) => ({
         title: `Event ${i + 1}`,
         description: `This is the description for event ${i + 1}. Details and agenda for this event go here.`,
     }));
 
+    async function handleStripeCheckout() {
+        const stripe = await stripePromise;
+        const res = await fetch("/api/checkout-session", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ event: "GIKI TechFest Ticket" })
+        });
+        const data = await res.json();
+        if (stripe) {
+            stripe.redirectToCheckout({ sessionId: data.id });
+        }
+    }
+
     return (
-        <>
+        <ParallaxProvider>
             <Navbar />
 
-            {/* Background video section */}
+            {/* Hero Section */}
             <div className="relative h-screen w-full overflow-hidden">
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    className="absolute top-0 left-0 w-full h-full object-cover -z-10"
-                >
+                <video autoPlay loop muted className="absolute top-0 left-0 w-full h-full object-cover -z-10">
                     <source src="/background.mp4" type="video/mp4" />
                 </video>
 
@@ -79,7 +96,7 @@ export default function LandingPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        Event Convocation Starts In
+                        Convocation Starts In
                     </motion.h1>
 
                     <motion.div
@@ -100,20 +117,24 @@ export default function LandingPage() {
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 1 }}
                     >
-                        <Button size="lg" onClick={() => scrollTo("features")}>Explore Features</Button>
-                        <Button size="lg" variant="outline" onClick={() => scrollTo("testimonials")}>What People Say</Button>
+                        <Button size="lg" onClick={() => scrollTo("features")}>
+                            Discover Something New
+                        </Button>
+                        <Button size="lg" variant="outline" onClick={navigateToSubmit}>
+                            Submit Your Event
+                        </Button>
                     </motion.div>
                 </main>
             </div>
 
-            {/* Lottie animation section */}
+            {/* Lottie Animation */}
             <section className="bg-white py-20 text-center">
                 <div className="max-w-xl mx-auto">
-                    <Lottie animationData={animationData} loop={true} />
+                    <Lottie animationData={animationData} loop />
                 </div>
             </section>
 
-            {/* Parallax feature grid */}
+            {/* Features */}
             <section id="features" className="bg-zinc-100 py-20">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -135,7 +156,7 @@ export default function LandingPage() {
                                 >
                                     <h3 className="font-semibold text-lg">{feature}</h3>
                                     <p className="text-sm text-gray-500 mt-2">
-
+                                        Discover how our advanced tools help you find and create amazing events.
                                     </p>
                                 </motion.div>
                             </Parallax>
@@ -144,35 +165,20 @@ export default function LandingPage() {
                 </motion.div>
             </section>
 
-            {/* Event listing with modal */}
-            <section id="events" className="bg-white py-20 px-6">
-                <h2 className="text-3xl font-bold text-center mb-10">Upcoming Events</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                    {events.map((event, i) => (
-                        <motion.div
-                            key={i}
-                            className="bg-zinc-100 p-6 rounded-lg shadow cursor-pointer hover:bg-zinc-200"
-                            whileHover={{ scale: 1.02 }}
-                            onClick={() => {
-                                setSelectedEvent(event);
-                                setShowModal(true);
-                            }}
-                        >
-                            <h4 className="font-semibold text-lg">{event.title}</h4>
-                            <p className="text-sm text-gray-600 mt-2">Click for details</p>
-                        </motion.div>
-                    ))}
-                </div>
-            </section>
+            {/* Example usage below Subscribe section */}
+            <EventsSection />
 
-            {/* Booking section */}
+
+            {/* Booking CTA */}
             <section className="bg-blue-50 py-20 text-center px-6">
                 <h2 className="text-3xl font-bold mb-6">Book Your Tickets</h2>
-                <p className="mb-6 max-w-xl mx-auto text-gray-700">Secure your spot now and be a part of the most exciting events around!</p>
-                <Button size="lg">Book Now</Button>
+                <p className="mb-6 max-w-xl mx-auto text-gray-700">
+                    Secure your spot now and be a part of the most exciting events around!
+                </p>
+                <Button size="lg" onClick={handleStripeCheckout}>Book Now</Button>
             </section>
 
-            {/* Testimonials Carousel */}
+            {/* Testimonials */}
             <section id="testimonials" className="bg-white py-20">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -181,7 +187,7 @@ export default function LandingPage() {
                     transition={{ duration: 0.8 }}
                 >
                     <h2 className="text-3xl font-bold text-center mb-10">What Our Users Say</h2>
-                    <Swiper spaceBetween={50} slidesPerView={1} loop autoplay>
+                    <Swiper spaceBetween={50} slidesPerView={1} loop>
                         {[1, 2, 3].map((num) => (
                             <SwiperSlide key={num}>
                                 <div className="max-w-2xl mx-auto text-center px-6">
@@ -196,11 +202,29 @@ export default function LandingPage() {
                 </motion.div>
             </section>
 
-            {/* Modal for event details */}
+            {/* Subscribe */}
+            <section id="subscribe" className="bg-zinc-100 py-16 px-4">
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="max-w-xl mx-auto text-center"
+                >
+                    <h2 className="text-3xl font-bold mb-4">Stay in the Loop</h2>
+                    <p className="mb-6 text-zinc-600">Subscribe to get updates on new events, offers, and more!</p>
+                    <SubscribeForm />
+                </motion.div>
+            </section>
+
+            {/* Modal */}
             {showModal && selectedEvent && (
                 <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
                     <div className="bg-white p-6 rounded-lg shadow max-w-lg w-full relative">
-                        <button className="absolute top-2 right-2 text-gray-600" onClick={() => setShowModal(false)}>
+                        <button
+                            className="absolute top-2 right-2 text-gray-600"
+                            onClick={() => setShowModal(false)}
+                        >
                             ✕
                         </button>
                         <h3 className="text-2xl font-bold mb-4">{selectedEvent.title}</h3>
@@ -208,7 +232,7 @@ export default function LandingPage() {
                     </div>
                 </div>
             )}
-        </>
+        </ParallaxProvider>
     );
 }
 

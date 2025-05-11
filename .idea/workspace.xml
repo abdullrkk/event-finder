@@ -4,12 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45b68898-2a27-4fc3-8b65-4999b168072b" name="Changes" comment="Commit 1">
-      <change afterPath="$PROJECT_DIR$/components/ClientProviders.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/background.mp4" afterDir="false" />
+    <list default="true" id="45b68898-2a27-4fc3-8b65-4999b168072b" name="Changes" comment="Added more features such as: &#10;Events Grid&#10;Payment section&#10;Testimonial section&#10;Animations">
+      <change afterPath="$PROJECT_DIR$/app/api/checkout-session/route.ts " afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/AuthModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/CartDrawer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/CountdownTimer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/CreatorAuthModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/EventsSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/SubscribeForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/context/CartContext.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -54,7 +63,8 @@
     &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Users/abdulrahmankhan/event-finder/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -70,7 +80,8 @@
       <workItem from="1745771359030" duration="14209000" />
       <workItem from="1746880364187" duration="6188000" />
       <workItem from="1746886581045" duration="206000" />
-      <workItem from="1746886796694" duration="5044000" />
+      <workItem from="1746886796694" duration="19742000" />
+      <workItem from="1746914946783" duration="15201000" />
     </task>
     <task id="LOCAL-00001" summary="Commit 1">
       <option name="closed" value="true" />
@@ -96,11 +107,24 @@
       <option name="project" value="LOCAL" />
       <updated>1746886859254</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added more features such as: &#10;Events Grid&#10;Payment section&#10;Testimonial section&#10;Animations">
+      <option name="closed" value="true" />
+      <created>1746895640434</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1746895640434</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/next.config.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -115,6 +139,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 1" />
+    <MESSAGE value="Added more features such as: &#10;Events Grid&#10;Payment section&#10;Testimonial section&#10;Animations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more features such as: &#10;Events Grid&#10;Payment section&#10;Testimonial section&#10;Animations" />
   </component>
 </project>
