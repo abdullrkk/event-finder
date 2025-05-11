@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45b68898-2a27-4fc3-8b65-4999b168072b" name="Changes" comment="Added more features such as: &#10;Events Grid&#10;Payment section&#10;Testimonial section&#10;Animations">
-      <change afterPath="$PROJECT_DIR$/app/api/checkout-session/route.ts " afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/AuthModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/CartDrawer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/CountdownTimer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/CreatorAuthModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/EventsSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/SubscribeForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/CartContext.tsx" afterDir="false" />
+    <list default="true" id="45b68898-2a27-4fc3-8b65-4999b168072b" name="Changes" comment="Added more features such as: &#10;Creator login/register&#10;Events Cart&#10;Updated Navbar&#10;Enhanced the ui/ux">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,26 +34,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/abdulrahmankhan/event-finder&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/abdulrahmankhan/event-finder/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/abdulrahmankhan/event-finder",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "ts.external.directory.path": "/Users/abdulrahmankhan/event-finder/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -81,7 +66,7 @@
       <workItem from="1746880364187" duration="6188000" />
       <workItem from="1746886581045" duration="206000" />
       <workItem from="1746886796694" duration="19742000" />
-      <workItem from="1746914946783" duration="15201000" />
+      <workItem from="1746914946783" duration="16615000" />
     </task>
     <task id="LOCAL-00001" summary="Commit 1">
       <option name="closed" value="true" />
@@ -115,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746895640434</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added more features such as: &#10;Creator login/register&#10;Events Cart&#10;Updated Navbar&#10;Enhanced the ui/ux">
+      <option name="closed" value="true" />
+      <created>1746960351346</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746960351346</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +133,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit 1" />
     <MESSAGE value="Added more features such as: &#10;Events Grid&#10;Payment section&#10;Testimonial section&#10;Animations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more features such as: &#10;Events Grid&#10;Payment section&#10;Testimonial section&#10;Animations" />
+    <MESSAGE value="Added more features such as: &#10;Creator login/register&#10;Events Cart&#10;Updated Navbar&#10;Enhanced the ui/ux" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more features such as: &#10;Creator login/register&#10;Events Cart&#10;Updated Navbar&#10;Enhanced the ui/ux" />
   </component>
 </project>
